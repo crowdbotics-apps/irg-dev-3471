@@ -38,9 +38,9 @@ class R1(models.Model):
     r1 = models.BigIntegerField()
     r2 = models.ForeignKey(
         "home.CustomText",
-        on_delete=models.CASCADE,
         null=True,
         blank=True,
+        on_delete=models.CASCADE,
         related_name="r1_r2",
     )
 
@@ -48,3 +48,10 @@ class R1(models.Model):
 class R2(models.Model):
     "Generated Model"
     r2 = models.CharField(max_length=256,)
+    r3 = models.ForeignKey(
+        "home.CustomText",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        related_name="r2_r3",
+    )

@@ -50,8 +50,15 @@ class R2(models.Model):
     r2 = models.CharField(max_length=256,)
     r3 = models.ForeignKey(
         "home.CustomText",
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+        related_name="r2_r3",
+    )
+    r4 = models.ForeignKey(
+        "users.User",
         on_delete=models.CASCADE,
         null=True,
         blank=True,
-        related_name="r2_r3",
+        related_name="r2_r4",
     )
